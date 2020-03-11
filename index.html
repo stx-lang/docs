@@ -1,11 +1,11 @@
-<!DOCTYPE html><html><head><meta name="generator" content="STX 1.0.0"><title>STX Documentation</title><link rel="stylesheet" type="text/css" href="assets/layout.css"><link rel="stylesheet" type="text/css" href="assets/style.css"></head><body data-type="book"><h1>STX Documentation</h1><p><nav data-type="toc"><h1>Table of Contents</h1><ol><li><a href="#stx" data-type="xref" data-number="1.">STX</a></li><li><a href="#features" data-type="xref" data-number="2.">Features</a><ol><li><a href="#structured-documents" data-type="xref" data-number="2.1.">Structured Documents</a></li><li><a href="#cross-references" data-type="xref" data-number="2.2.">Cross References</a></li><li><a href="#numbering" data-type="xref" data-number="2.3.">Numbering</a></li><li><a href="#output-format" data-type="xref" data-number="2.4.">Output Formats</a><ol><li><a href="#html" data-type="xref" data-number="2.4.1.">HTML</a></li><li><a href="#json" data-type="xref" data-number="2.4.2.">JSON</a></li></ol></li></ol></li><li><a href="#syntax" data-type="xref" data-number="3.">Syntax</a><ol><li><a href="#block-mark" data-type="xref" data-number="3.1.">Block Components</a><ol><li><a href="#sections" data-type="xref" data-number="3.1.1.">Sections</a></li><li><a href="#lists" data-type="xref" data-number="3.1.2.">Lists</a></li><li><a href="#tables" data-type="xref" data-number="3.1.3.">Tables</a></li><li><a href="#captions" data-type="xref" data-number="3.1.4.">Captions</a></li><li><a href="#literal-block" data-type="xref" data-number="3.1.5.">Literal Block</a></li><li><a href="#capturing-block" data-type="xref" data-number="3.1.6.">Capturing Block</a></li><li><a href="#content-breaks" data-type="xref" data-number="3.1.7.">Content Breaks</a></li><li><a href="#paragraphs" data-type="xref" data-number="3.1.8.">Paragraphs</a></li></ol></li><li><a href="#inline-components" data-type="xref" data-number="3.2.">Inline Components</a><ol><li><a href="#delimited-text" data-type="xref" data-number="3.2.1.">Delimited Text</a></li><li><a href="#links" data-type="xref" data-number="3.2.2.">Links</a></li><li><a href="#symbols" data-type="xref" data-number="3.2.3.">Symbols</a></li><li><a href="#capturing-functions" data-type="xref" data-number="3.2.4.">Capturing &amp; Functions</a></li><li><a href="#attributes" data-type="xref" data-number="3.2.5.">Attributes</a></li></ol></li></ol></li><li><a href="#functions" data-type="xref" data-number="4.">Functions</a></li><li><a href="#data-syntax" data-type="xref" data-number="5.">Data Syntax</a><ol><li><a href="#token" data-type="xref" data-number="5.1.">Token</a></li><li><a href="#entry" data-type="xref" data-number="5.2.">Entry</a></li><li><a href="#group" data-type="xref" data-number="5.3.">Group</a></li></ol></li><li><a href="#quick-reference" data-type="xref" data-number="6.">Quick-reference</a></li></ol></nav>
+<!DOCTYPE html><html><head><meta name="generator" content="STX 0.1.0 alpha"><title>STX Documentation</title><link rel="stylesheet" type="text/css" href="assets/layout.css"><link rel="stylesheet" type="text/css" href="assets/style.css"></head><body data-type="book"><h1>STX Documentation</h1><p><nav data-type="toc"><h1>Table of Contents</h1><ol><li><a href="#stx" data-type="xref" data-number="1.">STX</a></li><li><a href="#features" data-type="xref" data-number="2.">Features</a><ol><li><a href="#structured-documents" data-type="xref" data-number="2.1.">Structured Documents</a></li><li><a href="#cross-references" data-type="xref" data-number="2.2.">Cross References</a></li><li><a href="#numbering" data-type="xref" data-number="2.3.">Numbering</a></li><li><a href="#output-format" data-type="xref" data-number="2.4.">Output Formats</a><ol><li><a href="#html" data-type="xref" data-number="2.4.1.">HTML</a></li><li><a href="#json" data-type="xref" data-number="2.4.2.">JSON</a></li></ol></li></ol></li><li><a href="#syntax" data-type="xref" data-number="3.">Syntax</a><ol><li><a href="#block-mark" data-type="xref" data-number="3.1.">Block Components</a><ol><li><a href="#sections" data-type="xref" data-number="3.1.1.">Sections</a></li><li><a href="#lists" data-type="xref" data-number="3.1.2.">Lists</a></li><li><a href="#tables" data-type="xref" data-number="3.1.3.">Tables</a></li><li><a href="#captions" data-type="xref" data-number="3.1.4.">Captions</a></li><li><a href="#literal-block" data-type="xref" data-number="3.1.5.">Literal Block</a></li><li><a href="#capturing-block" data-type="xref" data-number="3.1.6.">Capturing Block</a></li><li><a href="#content-breaks" data-type="xref" data-number="3.1.7.">Content Breaks</a></li><li><a href="#paragraphs" data-type="xref" data-number="3.1.8.">Paragraphs</a></li></ol></li><li><a href="#inline-components" data-type="xref" data-number="3.2.">Inline Components</a><ol><li><a href="#rich-text" data-type="xref" data-number="3.2.1.">Rich Text</a></li><li><a href="#links" data-type="xref" data-number="3.2.2.">Links</a></li><li><a href="#symbols" data-type="xref" data-number="3.2.3.">Symbols</a></li><li><a href="#inline-capturing" data-type="xref" data-number="3.2.4.">Inline Capturing</a></li><li><a href="#function-call" data-type="xref" data-number="3.2.5.">Function Call</a></li></ol></li><li><a href="#attributes" data-type="xref" data-number="3.3.">Attributes</a></li><li><a href="#directives" data-type="xref" data-number="3.4.">Directives</a><ol><li><a href="#include-directive" data-type="xref" data-number="3.4.1.">Include Directive</a></li><li><a href="#output-directive" data-type="xref" data-number="3.4.2.">Output Directive</a></li><li><a href="#stylesheet-directive" data-type="xref" data-number="3.4.3.">Stylesheet Directive</a></li><li><a href="#meta-data-directives" data-type="xref" data-number="3.4.4.">Meta-data Directives</a></li></ol></li></ol></li><li><a href="#functions" data-type="xref" data-number="4.">Functions</a><ol><li><a href="#code" data-type="xref" data-number="4.1.">Code</a></li><li><a href="#images" data-type="xref" data-number="4.2.">Images</a></li><li><a href="#embed-content" data-type="xref" data-number="4.3.">Embed Content</a></li><li><a href="#table-of-contents" data-type="xref" data-number="4.4.">Table of Contents</a></li><li><a href="#admonitions" data-type="xref" data-number="4.5.">Admonitions</a></li><li><a href="#other" data-type="xref" data-number="4.6.">Other</a></li></ol></li><li><a href="#data-syntax" data-type="xref" data-number="5.">Data Syntax</a><ol><li><a href="#token" data-type="xref" data-number="5.1.">Token</a></li><li><a href="#entry" data-type="xref" data-number="5.2.">Entry</a></li><li><a href="#group" data-type="xref" data-number="5.3.">Group</a></li></ol></li></ol></nav>
 </p><section id="stx"><h1 data-number="1.">STX
 </h1><p>STX is a markup language for creating documents.
 It is designed to be simple enough to be easily read and written but at the 
 same time powerful enough to allow creating complex documents.
 </p><p>A document in STX is generated by a single self-describing text file;
 the <a href="#output-format" data-type="xref">output format</a> and <a href="#document-meta-data" data-type="xref" data-status="invalid">document meta-data</a> is embedded in the file.
-External content can be included from other resources using <a href="#directives" data-type="xref" data-status="invalid">directives</a>.
+External content can be included from other resources using <a href="#directives" data-type="xref">directives</a>.
 </p><p>Despite part of the syntax is based on Markdown and AsciiDoc, STX is not an 
 extension. In order to achieve advanced features, most of the <a href="#syntax" data-type="xref">syntax</a> is 
 different and <strong>stricter</strong>.
@@ -54,7 +54,7 @@ Please see [other options], it also works with [more options].
 </figcaption></figure></section><section id="numbering"><h2 data-number="2.3.">Numbering
 </h2><p>Since the documents in STX are organized by sections, they can be easily 
 numbered. Each section, figure and table are automatically numbered.
-</p><p>Additionally, there is a function for generating a <a href="#table-of-contents" data-type="xref" data-status="invalid">Table of Contents</a>.
+</p><p>Additionally, there is a function for generating a <a href="#table-of-contents" data-type="xref">Table of Contents</a>.
 All numbers of sections, figures and tables of this document were 
 auto-generated as well as the table of contents.
 </p></section><section id="output-format"><h2 data-number="2.4.">Output Formats
@@ -221,7 +221,7 @@ This is the paragraph #2.
 This line is part of the paragraph #2.
 </span></pre><figcaption data-number="19.">Two paragraphs.
 </figcaption></figure></section></section><section id="inline-components"><h2 data-number="3.2.">Inline Components
-</h2><section id="delimited-text"><h3 data-number="3.2.1.">Delimited Text
+</h2><section id="rich-text"><h3 data-number="3.2.1.">Rich Text
 </h3><p>There are some delimiter marks that can decorate the surrounded inline 
 content for producing richer components. 
 These marks can be nested as any other component in STX.
@@ -249,65 +249,112 @@ with <code>“</code> and <code>”</code>.
 with <code>‘</code> and <code>’</code>.
 </td><td><code>&apos;&apos;Secondary&apos;&apos; marks.</code>
 </td></tr></table></section><section id="links"><h3 data-number="3.2.2.">Links
-</h3><table id="-content-inline-link-with-implicit-reference"><tr><td><code>[</code> <em>content</em> <code>]</code>                  </td><td>Inline link with implicit reference.
-</td></tr><tr><td><code>[</code> <em>content</em> <code>](</code> <em>reference</em> <code>)</code> </td><td>Inline link with explicit reference.
-</td></tr></table></section><section id="symbols"><h3 data-number="3.2.3.">Symbols
-</h3><table id="-inline-ellipsis-symbol-"><tr><td><code>...</code> </td><td>Inline ellipsis symbol.
-</td></tr></table></section><section id="capturing-functions"><h3 data-number="3.2.4.">Capturing &amp; Functions
-</h3><table id="syntax-description-content-simple-container"><tr><th>Syntax                             </th><th>Description
-</th></tr><tr><td><code>{</code> <em>content</em> <code>}</code>                 </td><td>Simple container.
-</td></tr><tr><td><code>&lt;</code> <em><a href="#entry" data-type="xref">entry</a></em> <code>&gt;</code>                 </td><td>Simple macro.
-</td></tr><tr><td><code>&lt;</code> <em><a href="#entry" data-type="xref">entry</a></em> <code>&gt;{</code> <em>content</em> <code>}</code> </td><td>Capturing block
-</td></tr><tr><td><code>{</code> <em>content</em> <code>}&lt;</code> <em><a href="#entry" data-type="xref">entry</a></em> <code>&gt;</code> </td><td>Capturing block
-</td></tr></table></section><section id="attributes"><h3 data-number="3.2.5.">Attributes
-</h3><table id="-value-attribute-for-the-next-component-"><tr><td><code>@</code> <em><a href="#value" data-type="xref" data-status="invalid">value</a></em> </td><td>Attribute for the next component.
-</td></tr></table></section></section></section><section id="functions"><h1 data-number="4.">Functions
-</h1></section><section id="data-syntax"><h1 data-number="5.">Data Syntax
+</h3><p>Links can create cross references for internal targets or hyperlinks for
+the external ones. In order to create a link, the inline content must be
+surrounded by <code>[</code> (left square bracket symbol) and <code>]</code> (right square 
+bracket symbol), optionally, the target reference surrounded
+by parenthesis should be appended immediately after the right bracket.
+</p><figure id="different-ways-to-create-links-1"><pre data-type="programlisting" data-code-language="stx"><span class="stx">[Inline link with implicit reference.]
+[Inline link.](with explicit reference)
+</span></pre><figcaption data-number="20.">Different ways to create links.
+</figcaption></figure></section><section id="symbols"><h3 data-number="3.2.3.">Symbols
+</h3><p>There are some combinations of characteres that generate specific symbols:
+</p><table id="character-sequence-symbol-three-period-symbols"><tr><th>Character Sequence            </th><th>Symbol
+</th></tr><tr><td><code>...</code> (three period symbols) </td><td><code>…</code> (ellipsis)
+</td></tr></table></section><section id="inline-capturing"><h3 data-number="3.2.4.">Inline Capturing
+</h3><p>Similar to the <a href="#capturing-blocks" data-type="xref">capturing blocks</a>, inline content can be captured as well
+by surrounding it with <code>{</code> and <code>}</code> (left and right brace symbols).
+Captured text doesn&apos;t change too much by itself, it only gets grouped
+and the rendered result is normally the same.
+</p><figure id="the-captured-text-is-the-american-rock-band"><pre data-type="programlisting" data-code-language="stx"><span class="stx">&quot;&quot;Light My Fire&quot;&quot; is a song by {the American rock band *the Doors*}.
+</span></pre><figcaption data-number="21.">The captured text is <code>the American rock band *the Doors*</code>.
+</figcaption></figure><p>In order to generate richer content, the captured content can be processed 
+by appending a <a href="#function-call" data-type="xref">function call</a> immediately after the <code>}</code> (right brace 
+symbol).
+</p></section><section id="function-call"><h3 data-number="3.2.5.">Function Call
+</h3><p>To create a function call, an <a href="#entry" data-type="xref">entry</a> must be surrounded with <code>&lt;</code> and <code>&gt;</code>
+(left and right angle bracket symbols). Functions calls can receive 
+captured content and the arguments indicated in the entry.
+</p><p>The name of the entry indicates the function and the value are the 
+direct arguments. Captured content can be passed as argument by putting it
+immediately before of a function call.
+</p><figure id="different-ways-to-create-function-calls-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">Click on the folder icon (&lt;img: folder.png&gt;).
+
+Links are highlighted with {red}&lt;color:#FF0000&gt;.
+</span></pre><figcaption data-number="22.">Different ways to create function calls.
+</figcaption></figure></section></section><section id="attributes"><h2 data-number="3.3.">Attributes
+</h2><p>All components can receive arguments, they are used mainly for changing how
+it is rendered or just to provide meta information. 
+</p><p>The arguments must be specificed before the component and are created with
+a <code>@</code> (at symbol) followed by an <a href="#entry" data-type="xref">entry</a>. The entry represents the name and
+value of the attribute.
+</p><figure id="section-marked-as-an-appendix-by-using-attributes"><pre data-type="programlisting" data-code-language="stx"><span class="stx">@type:appendix
+= Appendix Title
+
+Appendix content
+</span></pre><figcaption data-number="23.">Section marked as an appendix by using attributes.
+</figcaption></figure><p>The attributes which can accept all components are described in the table
+below.
+</p><table id="global-attributes-for-components-"><caption data-number="3.">Global attributes for components.
+</caption><tr><th>Attribute </th><th>Accepted Values </th><th>Description
+</th></tr><tr><td><code>ref</code>     
+</td><td><a href="#token" data-type="xref">Token</a> or <a href="#group" data-type="xref">Group</a> of tokens.
+</td><td>Defines how the component can be referenced by <a href="#links" data-type="xref">links</a>.
+</td></tr></table></section><section id="directives"><h2 data-number="3.4.">Directives
+</h2><p>Directives are instructions for the STX compiler, they are created by using
+a <code>#</code> (number sign) followed by an <a href="#entry" data-type="xref">entry</a> representing the name and 
+arguments of the directive.
+</p><p>Unlike functions, that produce a component and are evaluated after the 
+document is parsed, directives are evaluated immediately when they are 
+found in the document and doesn&apos;t necessarily produce components.
+</p><section id="include-directive"><h3 data-number="3.4.1.">Include Directive
+</h3><p>Accepts a <a href="#token" data-type="xref">Token</a> or a <a href="#group" data-type="xref">Group</a> of tokens, the tokens represent the files
+which are going to be included where the directive was placed.
+</p><p>The specified files are relative to the current STX file, if the arguments 
+contain a folder, the entire content of the folder is included recursively.
+</p><figure id="include-examples-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">#include(appendix.stx)
+
+#include(appendix.stx, glossary.stx)
+</span></pre><figcaption data-number="24.">Include examples.
+</figcaption></figure></section><section id="output-directive"><h3 data-number="3.4.2.">Output Directive
+</h3><p>Indicates the output format after processing the document. Accepts 
+following arguments:
+</p><ul><li><code>format</code>: Built-in values are <code>html</code> and <code>json</code>.
+</li><li><code>target</code>: The file where the document should be generated.
+</li><li><code>options</code>: Format-specific options.
+</li></ul><figure id="output-directive-example-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">#output(format: html, target: ./index.html)
+</span></pre><figcaption data-number="25.">Output directive example.
+</figcaption></figure></section><section id="stylesheet-directive"><h3 data-number="3.4.3.">Stylesheet Directive
+</h3><p>This directive exists because HTML and other formats supports the use of 
+stylesheets. It accepts a <a href="#token" data-type="xref">Token</a> or a <a href="#group" data-type="xref">Group</a> of tokens representing the
+stylesheet files.
+</p><figure id="stylesheets-directive-example-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">#stylesheets(
+    assets/layout.css,
+    assets/style.css
+)
+</span></pre><figcaption data-number="26.">Stylesheets directive example.
+</figcaption></figure></section><section id="meta-data-directives"><h3 data-number="3.4.4.">Meta-data Directives
+</h3><p>There are some directives for defining document attributes, these values
+are not necessarily rendered in the document.
+</p><ul><li><code>title</code>: Defines the title of the document.
+</li><li><code>author</code>: Defines the author of the document.
+</li><li><code>encoding</code>: Defines the encoding of the document.
+</li></ul><figure id="meta-data-directives-example-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">#title(`STX Documentation`)
+#author(`Sergio Pedraza`)
+#encoding(`UTF-8`)
+</span></pre><figcaption data-number="27.">Meta-data directives example.
+</figcaption></figure></section></section></section><section id="functions"><h1 data-number="4.">Functions
+</h1><section id="code"><h2 data-number="4.1.">Code
+</h2></section><section id="images"><h2 data-number="4.2.">Images
+</h2></section><section id="embed-content"><h2 data-number="4.3.">Embed Content
+</h2></section><section id="table-of-contents"><h2 data-number="4.4.">Table of Contents
+</h2></section><section id="admonitions"><h2 data-number="4.5.">Admonitions
+</h2></section><section id="other"><h2 data-number="4.6.">Other
+</h2></section></section><section id="data-syntax"><h1 data-number="5.">Data Syntax
 </h1><section id="token"><h2 data-number="5.1.">Token
 </h2></section><section id="entry"><h2 data-number="5.2.">Entry
 </h2></section><section id="group"><h2 data-number="5.3.">Group
-</h2></section></section><section id="quick-reference"><h1 data-number="6.">Quick-reference
-</h1><pre data-type="programlisting" data-code-language="stx"><span class="stx">= Section 1
-== Section 2
-=== Section 3
-==== Section 4
-===== Section 5
-====== Section 6
-
-Paragraph starts, *strong text* _emphasized text_ `inline code sample`,
-paragraph continues, [Cross Reference], [Custom Text](cross reference),
-both previous links points to the same reference defined using `@ref(...)`,
-last paragraph line, [External Link](http://www.example.com).
-
-@ref(`cross reference`)
-- Item 1, this unordered list is the target component...
-- Item 2, ...for those links that points to `cross reference`
-
-Typographic quotation marks examples: &quot;&quot;surrounded by primary marks&quot;&quot;,
-and &apos;&apos;surrounded by secondary marks&apos;&apos;.
-
-. Ordered list item 1.
-. Ordered list item 2.
-
-:: Table caption before component.
-|= Column Header | Column Header
-|- Normal cell   | Normal cell
-%
-|- This is a brand new table, the mark `%` breaks any component.
-
-+++ code:stx
-Literal content marked as `stx` language.
-+++
-
-&lt;img(https://github.com/favicon.ico)&gt;
-:^ Image caption after component (results in a figure).
-
-Inline reference {here}&lt;ref&gt;, [link to the previous reference](here).
-
-!!! note
-Inner content is processed by the `note` function resulting in a note box.
-!!!
-</span></pre><p><script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+</h2><p><script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 <script type="text/javascript">
     // create layout
     (() => {
@@ -379,4 +426,4 @@ Inner content is processed by the `note` function resulting in a note box.
     })();
 </script>
 
-</p></section></body></html>
+</p></section></section></body></html>

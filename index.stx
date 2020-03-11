@@ -297,6 +297,7 @@ console.log('Hello world!');
 See the [functions] sections for more details.
 !!!
 
+@ref(`capturing blocks`)
 === Capturing Block
 
 This component creates a group of components which can be processed by a
@@ -349,7 +350,7 @@ This line is part of the paragraph #2.
 
 == Inline Components
 
-=== Delimited Text
+=== Rich Text
 
 There are some delimiter marks that can decorate the surrounded inline 
 content for producing richer components. 
@@ -381,26 +382,161 @@ These marks can be nested as any other component in STX.
 
 === Links
 
-|- `\[` _content_ `]`                  | Inline link with implicit reference.
-|- `\[` _content_ `](` _reference_ `)` | Inline link with explicit reference.
+Links can create cross references for internal targets or hyperlinks for
+the external ones. In order to create a link, the inline content must be
+surrounded by `\[` (left square bracket symbol) and `]` (right square 
+bracket symbol), optionally, the target reference surrounded
+by parenthesis should be appended immediately after the right bracket.
+
++++ code:stx
+[Inline link with implicit reference.]
+[Inline link.](with explicit reference)
++++
+:^ Different ways to create links.
 
 === Symbols
 
-|- `\...` | Inline ellipsis symbol.
+There are some combinations of characteres that generate specific symbols:
 
-=== Capturing & Functions
+|= Character Sequence            | Symbol
+|- `\...` (three period symbols) | `...` (ellipsis)
 
-|= Syntax                             | Description
-|- `\{` _content_ `}`                 | Simple container.
-|- `\<` _[entry]_ `>`                 | Simple macro.
-|- `\<` _[entry]_ `>\{` _content_ `}` | Capturing block
-|- `\{` _content_ `}\<` _[entry]_ `>` | Capturing block
+=== Inline Capturing
 
-=== Attributes
+Similar to the [capturing blocks], inline content can be captured as well
+by surrounding it with `\{` and `}` (left and right brace symbols).
+Captured text doesn't change too much by itself, it only gets grouped
+and the rendered result is normally the same.
 
-|- `@` _[value]_ | Attribute for the next component.
++++ code:stx
+""Light My Fire"" is a song by {the American rock band *the Doors*}.
++++
+:^ The captured text is `the American rock band \*the Doors\*`.
+
+In order to generate richer content, the captured content can be processed 
+by appending a [function call] immediately after the `}` (right brace 
+symbol).
+
+=== Function Call
+
+To create a function call, an [entry] must be surrounded with `\<` and `>`
+(left and right angle bracket symbols). Functions calls can receive 
+captured content and the arguments indicated in the entry.
+
+The name of the entry indicates the function and the value are the 
+direct arguments. Captured content can be passed as argument by putting it
+immediately before of a function call.
+
++++ code:stx
+Click on the folder icon (<img: folder.png>).
+
+Links are highlighted with {red}<color:#FF0000>.
++++
+:^ Different ways to create function calls.
+
+== Attributes
+
+All components can receive arguments, they are used mainly for changing how
+it is rendered or just to provide meta information. 
+
+The arguments must be specificed before the component and are created with
+a `@` (at symbol) followed by an [entry]. The entry represents the name and
+value of the attribute.
+
++++ code:stx
+@type:appendix
+= Appendix Title
+
+Appendix content
++++
+:^ Section marked as an appendix by using attributes.
+
+The attributes which can accept all components are described in the table
+below.
+
+:: Global attributes for components.
+|= Attribute | Accepted Values | Description
+|- `ref`     
+   | [Token] or [Group] of tokens.
+   | Defines how the component can be referenced by [links].
+
+== Directives
+
+Directives are instructions for the STX compiler, they are created by using
+a `#` (number sign) followed by an [entry] representing the name and 
+arguments of the directive.
+
+Unlike functions, that produce a component and are evaluated after the 
+document is parsed, directives are evaluated immediately when they are 
+found in the document and doesn't necessarily produce components.
+
+=== Include Directive
+
+Accepts a [Token] or a [Group] of tokens, the tokens represent the files
+which are going to be included where the directive was placed.
+
+The specified files are relative to the current STX file, if the arguments 
+contain a folder, the entire content of the folder is included recursively.
+
++++ code:stx
+#include(appendix.stx)
+
+#include(appendix.stx, glossary.stx)
++++
+:^ Include examples.
+
+=== Output Directive
+
+Indicates the output format after processing the document. Accepts 
+following arguments:
+
+- `format`: Built-in values are `html` and `json`.
+- `target`: The file where the document should be generated.
+- `options`: Format-specific options.
+
++++ code:stx
+#output(format: html, target: ./index.html)
++++
+:^ Output directive example.
+
+=== Stylesheet Directive
+
+This directive exists because HTML and other formats supports the use of 
+stylesheets. It accepts a [Token] or a [Group] of tokens representing the
+stylesheet files.
+
++++ code:stx
+#stylesheets(
+    assets/layout.css,
+    assets/style.css
+)
++++
+:^ Stylesheets directive example.
+
+=== Meta-data Directives
+
+There are some directives for defining document attributes, these values
+are not necessarily rendered in the document.
+
+- `title`: Defines the title of the document.
+- `author`: Defines the author of the document.
+- `encoding`: Defines the encoding of the document.
+
++++ code:stx
+#title(`STX Documentation`)
+#author(`Sergio Pedraza`)
+#encoding(`UTF-8`)
++++
+:^ Meta-data directives example.
 
 = Functions
+== Code
+== Images
+== Embed Content
+== Table of Contents
+== Admonitions
+== Other
+
 
 = Data Syntax
 
@@ -412,51 +548,6 @@ These marks can be nested as any other component in STX.
 
 == Group
 
-
-= Quick-reference
-
-+++ code:stx
-= Section 1
-== Section 2
-=== Section 3
-==== Section 4
-===== Section 5
-====== Section 6
-
-Paragraph starts, *strong text* _emphasized text_ `inline code sample`,
-paragraph continues, [Cross Reference], [Custom Text](cross reference),
-both previous links points to the same reference defined using `@ref(...)`,
-last paragraph line, [External Link](http://www.example.com).
-
-@ref(`cross reference`)
-- Item 1, this unordered list is the target component...
-- Item 2, ...for those links that points to `cross reference`
-
-Typographic quotation marks examples: ""surrounded by primary marks"",
-and ''surrounded by secondary marks''.
-
-. Ordered list item 1.
-. Ordered list item 2.
-
-:: Table caption before component.
-|= Column Header | Column Header
-|- Normal cell   | Normal cell
-%
-|- This is a brand new table, the mark `%` breaks any component.
-
-\+++ code:stx
-Literal content marked as `stx` language.
-\+++
-
-<img(https://github.com/favicon.ico)>
-:^ Image caption after component (results in a figure).
-
-Inline reference {here}<ref>, [link to the previous reference](here).
-
-!!! note
-Inner content is processed by the `note` function resulting in a note box.
-!!!
-+++
 
 
 #stylesheets(
