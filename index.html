@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta name="generator" content="STX 0.1.0 alpha"><title>STX Documentation</title><link rel="stylesheet" type="text/css" href="assets/layout.css"><link rel="stylesheet" type="text/css" href="assets/style.css"></head><body data-type="book"><h1>STX Documentation</h1><p><nav data-type="toc"><h1>Table of Contents</h1><ol><li><a href="#stx" data-type="xref" data-number="1.">STX</a></li><li><a href="#features" data-type="xref" data-number="2.">Features</a><ol><li><a href="#structured-documents" data-type="xref" data-number="2.1.">Structured Documents</a></li><li><a href="#cross-references" data-type="xref" data-number="2.2.">Cross References</a></li><li><a href="#numbering" data-type="xref" data-number="2.3.">Numbering</a></li><li><a href="#output-format" data-type="xref" data-number="2.4.">Output Formats</a><ol><li><a href="#html" data-type="xref" data-number="2.4.1.">HTML</a></li><li><a href="#json" data-type="xref" data-number="2.4.2.">JSON</a></li></ol></li></ol></li><li><a href="#syntax" data-type="xref" data-number="3.">Syntax</a><ol><li><a href="#block-mark" data-type="xref" data-number="3.1.">Block Components</a><ol><li><a href="#sections" data-type="xref" data-number="3.1.1.">Sections</a></li><li><a href="#lists" data-type="xref" data-number="3.1.2.">Lists</a></li><li><a href="#tables" data-type="xref" data-number="3.1.3.">Tables</a></li><li><a href="#captions" data-type="xref" data-number="3.1.4.">Captions</a></li><li><a href="#literal-block" data-type="xref" data-number="3.1.5.">Literal Block</a></li><li><a href="#capturing-block" data-type="xref" data-number="3.1.6.">Capturing Block</a></li><li><a href="#content-breaks" data-type="xref" data-number="3.1.7.">Content Breaks</a></li><li><a href="#paragraphs" data-type="xref" data-number="3.1.8.">Paragraphs</a></li></ol></li><li><a href="#inline-components" data-type="xref" data-number="3.2.">Inline Components</a><ol><li><a href="#rich-text" data-type="xref" data-number="3.2.1.">Rich Text</a></li><li><a href="#links" data-type="xref" data-number="3.2.2.">Links</a></li><li><a href="#symbols" data-type="xref" data-number="3.2.3.">Symbols</a></li><li><a href="#inline-capturing" data-type="xref" data-number="3.2.4.">Inline Capturing</a></li><li><a href="#function-call" data-type="xref" data-number="3.2.5.">Function Call</a></li></ol></li><li><a href="#attributes" data-type="xref" data-number="3.3.">Attributes</a></li><li><a href="#directives" data-type="xref" data-number="3.4.">Directives</a><ol><li><a href="#include-directive" data-type="xref" data-number="3.4.1.">Include Directive</a></li><li><a href="#output-directive" data-type="xref" data-number="3.4.2.">Output Directive</a></li><li><a href="#stylesheet-directive" data-type="xref" data-number="3.4.3.">Stylesheet Directive</a></li><li><a href="#meta-data-directives" data-type="xref" data-number="3.4.4.">Meta-data Directives</a></li></ol></li></ol></li><li><a href="#functions" data-type="xref" data-number="4.">Functions</a><ol><li><a href="#code" data-type="xref" data-number="4.1.">Code</a></li><li><a href="#images" data-type="xref" data-number="4.2.">Images</a></li><li><a href="#embed-content" data-type="xref" data-number="4.3.">Embed Content</a></li><li><a href="#table-of-contents" data-type="xref" data-number="4.4.">Table of Contents</a></li><li><a href="#admonitions" data-type="xref" data-number="4.5.">Admonitions</a></li><li><a href="#other" data-type="xref" data-number="4.6.">Other</a></li></ol></li><li><a href="#data-syntax" data-type="xref" data-number="5.">Data Syntax</a><ol><li><a href="#token" data-type="xref" data-number="5.1.">Token</a></li><li><a href="#entry" data-type="xref" data-number="5.2.">Entry</a></li><li><a href="#group" data-type="xref" data-number="5.3.">Group</a></li></ol></li></ol></nav>
+<!DOCTYPE html><html><head><meta name="generator" content="STX 0.1.0 alpha"><title>STX Documentation</title><link rel="stylesheet" type="text/css" href="assets/layout.css"><link rel="stylesheet" type="text/css" href="assets/style.css"></head><body data-type="book"><h1>STX Documentation</h1><p><nav data-type="toc"><h1>Table of Contents</h1><ol><li><a href="#stx" data-type="xref">STX</a></li><li><a href="#features" data-type="xref">Features</a><ol><li><a href="#structured-documents" data-type="xref">Structured Documents</a></li><li><a href="#cross-references" data-type="xref">Cross References</a></li><li><a href="#numbering" data-type="xref">Numbering</a></li><li><a href="#output-format" data-type="xref">Output Formats</a><ol><li><a href="#html" data-type="xref">HTML</a></li><li><a href="#json" data-type="xref">JSON</a></li></ol></li></ol></li><li><a href="#syntax" data-type="xref">Syntax</a><ol><li><a href="#block-components" data-type="xref">Block Components</a><ol><li><a href="#sections" data-type="xref">Sections</a></li><li><a href="#lists" data-type="xref">Lists</a></li><li><a href="#tables" data-type="xref">Tables</a></li><li><a href="#captions" data-type="xref">Captions</a></li><li><a href="#literal-block" data-type="xref">Literal Block</a></li><li><a href="#capturing-blocks" data-type="xref">Capturing Block</a></li><li><a href="#content-breaks" data-type="xref">Content Breaks</a></li><li><a href="#paragraphs" data-type="xref">Paragraphs</a></li></ol></li><li><a href="#inline-components" data-type="xref">Inline Components</a><ol><li><a href="#rich-text" data-type="xref">Rich Text</a></li><li><a href="#links" data-type="xref">Links</a></li><li><a href="#symbols" data-type="xref">Symbols</a></li><li><a href="#inline-capturing" data-type="xref">Inline Capturing</a></li><li><a href="#function-call" data-type="xref">Function Call</a></li></ol></li><li><a href="#attributes" data-type="xref">Attributes</a></li><li><a href="#directives" data-type="xref">Directives</a><ol><li><a href="#include-directive" data-type="xref">Include Directive</a></li><li><a href="#output-directive" data-type="xref">Output Directive</a></li><li><a href="#stylesheet-directive" data-type="xref">Stylesheet Directive</a></li><li><a href="#meta-data-directives" data-type="xref">Meta-data Directives</a></li></ol></li></ol></li><li><a href="#functions" data-type="xref">Functions</a><ol><li><a href="#code" data-type="xref">Code</a></li><li><a href="#images" data-type="xref">Images</a></li><li><a href="#embed-content" data-type="xref">Embed Content</a></li><li><a href="#table-of-contents" data-type="xref">Table of Contents</a></li><li><a href="#admonitions" data-type="xref">Admonitions</a></li><li><a href="#other" data-type="xref">Other</a></li></ol></li><li><a href="#data-syntax" data-type="xref">Data Syntax</a><ol><li><a href="#token" data-type="xref">Token</a></li><li><a href="#entry" data-type="xref">Entry</a></li><li><a href="#group" data-type="xref">Group</a></li></ol></li></ol></nav>
 </p><section id="stx"><h1 data-number="1.">STX
 </h1><p>STX is a markup language for creating documents.
 It is designed to be simple enough to be easily read and written but at the 
@@ -17,7 +17,7 @@ documents.
 component structure described in the <a href="#document-model" data-type="xref" data-status="invalid">Document Model</a> section.
 </p><p>Building a document using components makes it possible to have &ldquo;inifite&rdquo;
 nesting and the option to render it to multiple <a href="#output-formats" data-type="xref" data-status="invalid">output formats</a>.
-</p><p><a id="nesting-rules"></a>Nesting rules are based on the text alignment. Whenever there is <a href="#block-mark" data-type="xref">block mark</a>, 
+</p><p><a id="nesting-rules"></a>Nesting rules are based on the text alignment. Whenever there is <a href="#block-mark" data-type="xref" data-status="invalid">block mark</a>, 
 the content can be nested following the aligment of the subsequent text. 
 The content can be broken just by breaking the alignment or by using a <code>%</code> 
 (percentage symbol).
@@ -88,90 +88,85 @@ for debugging and using it with other tools.
 </p><figure id="specifying-the-json-output-format-in-a-document"><pre data-type="programlisting" data-code-language="stx"><span class="stx">#output(format: json, target: index.json)
 </span></pre><figcaption data-number="7.">Specifying the JSON output format in a document.
 </figcaption></figure></section></section></section><section id="syntax"><h1 data-number="3.">Syntax
-</h1><p>The STX syntax is stricter then other markup languages. 
+</h1><p>The STX syntax is stricter than other markup languages. 
 Having a malformed component will cause a compilation error.
 </p><p>Since this is a markup language as well, the marks in the text together 
 with the text alignment makes it possible to create complex documents.
 This section describes the different types of marks and its syntax.
-</p><section id="block-mark"><h2 data-number="3.1.">Block Components
+</p><section id="block-components"><h2 data-number="3.1.">Block Components
 </h2><p>This type of components are able to contain more components inside, 
 they are the building blocks for a document.
 </p><p>Block marks are not recognized inside inline content, consequently,
 paragraphs cannot begin with a block mark.
+</p><p>When several block components are defined sequentially, they can even be
+considered as a single composite component.
 </p><section id="sections"><h3 data-number="3.1.1.">Sections
 </h3><p>There are 6 levels of sections, they can be created by repeating the <code>=</code> 
 (equal symbol). The number of symbols represents the level of the section.
-</p><p>The content of the section must be aligned with the section mark:
-</p><figure id="text-alignment-in-a-section-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">=== Heading content
-
-Section content.
-</span></pre><figcaption data-number="8.">Text alignment in a section.
+The content of the section must be aligned with the section mark.
+</p><figure id="section-syntax-"><pre data-type="programlisting"><p>=== <a href="#block-components" data-type="xref">Heading Content</a>
+</p><p><a href="#block-components" data-type="xref">Section Content</a>
+</p></pre><figcaption data-number="8.">Section syntax.
 </figcaption></figure><p>Compared with other markup languages, sections here are not just titles, 
-they contain all subsequent components until a section with a level equal 
-or less is found.
-</p><figure id="example-of-nested-sections-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">= Section A                (1.)
-== Section B     (inside A: 1.1)
-=== Section C    (inside B: 1.1.1)
-==== Section D   (inside C: 1.1.1.1)
-===== Section E  (inside D: 1.1.1.1.1)
-====== Section F (inside E: 1.1.1.1.1.1)
-====== Section G (inside E: 1.1.1.1.1.2)
-===== Section H  (inside D: 1.1.1.1.2)
-==== Section I   (inside C: 1.1.1.2)
-=== Section J    (inside B: 1.1.2)
-== Section K     (inside A: 1.2)
-= Section L                (2.)
+they contain all subsequent components <strong>until a section with a level equal 
+or less is found</strong>.
+</p><figure id="example-of-nested-sections-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">= Section A (1.)
+== Section B (1.1, inside A)
+=== Section C (1.1.1, inside B)
+=== Section D (1.1.2, inside B)
+=== Section E (1.1.3, inside B)
+== Section F (1.2, inside A)
+=== Section G (1.2.1., inside F)
+=== Section H (1.2.2, inside F)
+= Section I (2.)
+== Section J (2.1, inside I)
+== Section K (2.2, inside I)
 </span></pre><figcaption data-number="9.">Example of nested sections.
 </figcaption></figure></section><section id="lists"><h3 data-number="3.1.2.">Lists
 </h3><p>There are two kind of lists: unordered and ordered, they can be created by
 using the <code>-</code> (dash symbol) and <code>.</code> (period symbol) respectively.
-</p><figure id="distinct-types-of-lists-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">- Bulleted item 1.
-- Bulleted item 2.
-
-. Numbered item 1.
-. Numbered item 2.
-</span></pre><figcaption data-number="10.">Distinct types of lists.
-</figcaption></figure><p>The content of the items can be any supported component as long as the 
+</p><div data-type="layout" data-dir="row"><div data-type="layout-item"><figure><pre data-type="programlisting">- <a href="#block-components" data-type="xref">Item 1 Content</a>
+- <a href="#block-components" data-type="xref">Item 2 Content</a>
+- <a href="#block-components" data-type="xref">Item N Content</a>
+</pre><figcaption data-number="10.">Bulleted list syntax.
+</figcaption></figure></div><div data-type="layout-item"><figure><pre data-type="programlisting">. <a href="#block-components" data-type="xref">Item 1 Content</a>
+. <a href="#block-components" data-type="xref">Item 2 Content</a>
+. <a href="#block-components" data-type="xref">Item N Content</a>
+</pre><figcaption data-number="11.">Numbered list syntax.
+</figcaption></figure></div></div><p>The content of the items can be any supported component as long as the 
 <a href="#nesting-rules" data-type="xref">nesting rules</a> are followed.
 </p></section><section id="tables"><h3 data-number="3.1.3.">Tables
 </h3><p>Tables are created by gathering rows, the mark for heading rows is <code>|=</code> 
 (pipe and equal symbols) and for normal rows is <code>|-</code> (pipe and dash symbol). 
-</p><figure id="creating-a-table-with-a-heading-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">|= Heading Row
-|- Normal Row 1
-|- Normal Row 2
-</span></pre><figcaption data-number="11.">Creating a table with a heading.
-</figcaption></figure><p>The content of a row represents a cell, more cells can be added to the row 
+</p><p>The content of a row represents a cell, more cells can be added to the row 
 by using the <code>|</code> (pipe symbol), this cell mark can be used inline, in other 
 words, multiple cells can be defined in a single line.
-</p><figure id="creating-a-table-with-multiple-columns-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">|= Heading Column 1 | Heading Column 2 | Heading Column 3
-|- Normal Cell 1,1 | Normal Cell 1,2 | Normal Cell 1,3
-|- Normal Cell 2,1 
-   | Normal Cell 2,2 
-   | Normal Cell 3,3
-</span></pre><figcaption data-number="12.">Creating a table with multiple columns.
-</figcaption></figure></section><section id="captions"><h3 data-number="3.1.4.">Captions
+</p><figure id="table-syntax-"><pre data-type="programlisting">|= <a href="#block-components" data-type="xref">Heading 1 Content</a> | Heading 2 Content | Heading N Content
+|- <a href="#block-components" data-type="xref">Cell 1,1 Content</a>  | Cell 2,1 Content  | Cell N,1 Content
+|- <a href="#block-components" data-type="xref">Cell 1,2 Content</a>  | Cell 2,2 Content  | Cell N,2 Content
+|- <a href="#block-components" data-type="xref">Cell 1,N Content</a>  
+   | Cell 2,N Content
+   | Cell N,N Content
+</pre><figcaption data-number="12.">Table syntax.
+</figcaption></figure><div data-type="information"><p>The number of cells per row is not required to match.
+</p></div></section><section id="captions"><h3 data-number="3.1.4.">Captions
 </h3><p>Captions are not components <em>per se</em>, they are used to create or change 
 other components:
 </p><ul><li>When using captions with tables, the caption becomes part of the table.
 </li><li>Captions used with any other component creates a figure, the other component
 gets wrapped by the figure.
 </li></ul><p>There are two ways to apply a caption to a component:
-</p><ul><li><p><strong>Before the component</strong>: They are created by using <code>::</code> (two colon symbols)
+</p><ul><li><strong>Before the component</strong>: They are created by using <code>::</code> (two colon symbols)
 and must be placed before the target component at the same aligment.
-</p><figure id="adding-a-caption-to-a-table-with-a-pre-caption"><pre data-type="programlisting" data-code-language="stx"><span class="stx">:: Reserved keywords.
-|= Keyword
-|- `null`
-|- `true`
-|- `false`
-</span></pre><figcaption data-number="13.">Adding a caption to a table with a pre-caption.
-</figcaption></figure></li><li><p><strong>After the component</strong>: They are created by using <code>:^</code> (colon and caret 
+</li><li><strong>After the component</strong>: They are created by using <code>:^</code> (colon and caret 
 symbols) and must be placed after the target component at the same aligment.
-</p><figure id="creating-a-figure-of-a-code-block-with-a"><pre data-type="programlisting" data-code-language="stx"><span class="stx">+++ code:js
-var x = 0;
-+++
-:^ Declaring a variable.
-</span></pre><figcaption data-number="14.">Creating a figure of a code block with a post-caption.
-</figcaption></figure></li></ul></section><section id="literal-block"><h3 data-number="3.1.5.">Literal Block
+</li></ul><div data-type="layout" data-dir="row"><div data-type="layout-item"><figure><pre data-type="programlisting"><p>:: <a href="#block-components" data-type="xref">Caption Content</a>
+</p><p><a href="#block-components" data-type="xref">Target Component</a>
+</p></pre><figcaption data-number="13.">Pre-caption syntax.
+</figcaption></figure></div><div data-type="layout-item"><figure><pre data-type="programlisting"><p><a href="#block-components" data-type="xref">Target Component</a>
+</p><p>:^ <a href="#block-components" data-type="xref">Caption Content</a>
+</p></pre><figcaption data-number="14.">Post-caption syntax.
+</figcaption></figure></div></div></section><section id="literal-block"><h3 data-number="3.1.5.">Literal Block
 </h3><p>This component is allowed to contain raw text which won&apos;t be parsed by STX. 
 The text must be delimited by <code>+++</code> (three plus symbols); one line before
 and one line after.
@@ -187,18 +182,20 @@ mark (there can by any amount of spaces in between).
 console.log(&apos;Hello world!&apos;);
 +++
 </span></pre><figcaption data-number="16.">Code block component produced by a processed literal.
-</figcaption></figure><div data-type="information"><p>See the <a>functions</a> sections for more details.
-</p></div></section><section id="capturing-block"><h3 data-number="3.1.6.">Capturing Block
+</figcaption></figure><div data-type="information"><p>See the <a href="#functions" data-type="xref">functions</a> sections for more details.
+</p></div></section><section id="capturing-blocks"><h3 data-number="3.1.6.">Capturing Block
 </h3><p>This component creates a group of components which can be processed by a
 function to decorate them or create a richer component. The commponents
-must be delimited by <code>!!!</code> (three exclamation symbols); one line before 
+must be delimited by <code>{{{</code> (three left curly braces) and <code>}}}</code> (three
+right curly braces)
+; one line before 
 and one line after, the function must be inditacted by an <a href="#entry" data-type="xref">entry</a> right 
-after the first <code>!!!</code> mark (there can by any amount of spaces in between).
-</p><figure id="admonition-box-produced-by-a-captured-paragraph"><pre data-type="programlisting" data-code-language="stx"><span class="stx">!!! information
+after the first <code>{{{</code> mark (there can by any amount of spaces in between).
+</p><figure id="admonition-box-produced-by-a-captured-paragraph"><pre data-type="programlisting" data-code-language="stx"><span class="stx">{{{ information
 This text will be shown as an information admonition.
-!!!
+}}}
 </span></pre><figcaption data-number="17.">Admonition box produced by a captured paragraph.
-</figcaption></figure><div data-type="information"><p>See the <a>functions</a> sections for more details.
+</figcaption></figure><div data-type="information"><p>See the <a href="#functions" data-type="xref">functions</a> sections for more details.
 </p></div></section><section id="content-breaks"><h3 data-number="3.1.7.">Content Breaks
 </h3><p>Any block component can be broken by using <code>%</code> (percentage symbol).
 </p><figure id="section-content-broken-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">= Section A
@@ -212,7 +209,7 @@ Content of section B. Next block mark will break this section.
 This content now is inside the Section A.
 </span></pre><figcaption data-number="18.">Section content broken.
 </figcaption></figure></section><section id="paragraphs"><h3 data-number="3.1.8.">Paragraphs
-</h3><p>Any other sequence of characters that doesn&apos;t match with a <a href="#block-mark" data-type="xref">block mark</a> is
+</h3><p>Any other sequence of characters that doesn&apos;t match with a <a href="#block-mark" data-type="xref" data-status="invalid">block mark</a> is
 considered a paragraph. The paragraphs are composed by a sequence of 
 <a href="#inline-components" data-type="xref">inline components</a> and are broken by an empty line.
 </p><figure id="two-paragraphs-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">This is the paragraph #1.

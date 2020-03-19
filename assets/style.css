@@ -140,6 +140,13 @@ pre {
     padding: 5px;
     margin: 1em;
 }
+
+pre p {
+    margin: 0;
+}
+pre p + p {
+    margin-top: 1em;
+}
   
 /* tables */
 
@@ -225,4 +232,23 @@ div[data-type=information]::before {
 
 div[data-type=information] p {
     /* margin: 0; */
+}
+
+
+/* layouts */
+
+[data-type=layout][data-dir=row] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+[data-type=layout-item] {
+    flex-grow: 1;
+}
+
+[data-type=layout] figure {
+    margin-top: 0;
+    margin-bottom: 0;
 }
