@@ -1,24 +1,47 @@
-<!DOCTYPE html><html><head><meta name="generator" content="STX 0.1.0 alpha"><title>STX Documentation</title><link rel="stylesheet" type="text/css" href="assets/layout.css"><link rel="stylesheet" type="text/css" href="assets/style.css"></head><body data-type="book"><h1>STX Documentation</h1><p><nav data-type="toc"><h1>Table of Contents</h1><ol><li><a href="#stx" data-type="xref" data-number="1.">STX</a></li><li><a href="#features" data-type="xref" data-number="2.">Features</a><ol><li><a href="#structured-documents" data-type="xref" data-number="2.1.">Structured Documents</a></li><li><a href="#cross-references" data-type="xref" data-number="2.2.">Cross References</a></li><li><a href="#numbering" data-type="xref" data-number="2.3.">Numbering</a></li><li><a href="#output-format" data-type="xref" data-number="2.4.">Output Formats</a><ol><li><a href="#html" data-type="xref" data-number="2.4.1.">HTML</a></li><li><a href="#json" data-type="xref" data-number="2.4.2.">JSON</a></li></ol></li></ol></li><li><a href="#syntax" data-type="xref" data-number="3.">Syntax</a><ol><li><a href="#block-components" data-type="xref" data-number="3.1.">Block Components</a><ol><li><a href="#sections" data-type="xref" data-number="3.1.1.">Sections</a></li><li><a href="#lists" data-type="xref" data-number="3.1.2.">Lists</a></li><li><a href="#tables" data-type="xref" data-number="3.1.3.">Tables</a></li><li><a href="#captions" data-type="xref" data-number="3.1.4.">Captions</a></li><li><a href="#literal-block" data-type="xref" data-number="3.1.5.">Literal Block</a></li><li><a href="#capturing-blocks" data-type="xref" data-number="3.1.6.">Capturing Block</a></li><li><a href="#content-breaks" data-type="xref" data-number="3.1.7.">Content Breaks</a></li><li><a href="#paragraphs" data-type="xref" data-number="3.1.8.">Paragraphs</a></li></ol></li><li><a href="#inline-components" data-type="xref" data-number="3.2.">Inline Components</a><ol><li><a href="#rich-text" data-type="xref" data-number="3.2.1.">Rich Text</a></li><li><a href="#links" data-type="xref" data-number="3.2.2.">Links</a></li><li><a href="#symbols" data-type="xref" data-number="3.2.3.">Symbols</a></li><li><a href="#inline-capturing" data-type="xref" data-number="3.2.4.">Inline Capturing</a></li><li><a href="#function-call" data-type="xref" data-number="3.2.5.">Function Call</a></li></ol></li><li><a href="#attributes" data-type="xref" data-number="3.3.">Attributes</a></li><li><a href="#directives" data-type="xref" data-number="3.4.">Directives</a><ol><li><a href="#include-directive" data-type="xref" data-number="3.4.1.">Include Directive</a></li><li><a href="#output-directive" data-type="xref" data-number="3.4.2.">Output Directive</a></li><li><a href="#stylesheet-directive" data-type="xref" data-number="3.4.3.">Stylesheet Directive</a></li><li><a href="#meta-data-directives" data-type="xref" data-number="3.4.4.">Meta-data Directives</a></li></ol></li></ol></li><li><a href="#functions" data-type="xref" data-number="4.">Functions</a><ol><li><a href="#code" data-type="xref" data-number="4.1.">Code</a></li><li><a href="#images" data-type="xref" data-number="4.2.">Images</a></li><li><a href="#embed-content" data-type="xref" data-number="4.3.">Embed Content</a></li><li><a href="#table-of-contents" data-type="xref" data-number="4.4.">Table of Contents</a></li><li><a href="#admonitions" data-type="xref" data-number="4.5.">Admonitions</a></li></ol></li><li><a href="#data-syntax" data-type="xref" data-number="5.">Data Syntax</a><ol><li><a href="#token" data-type="xref" data-number="5.1.">Token</a></li><li><a href="#entry" data-type="xref" data-number="5.2.">Entry</a></li><li><a href="#group" data-type="xref" data-number="5.3.">Group</a></li></ol></li></ol></nav>
+<!DOCTYPE html><html><head><meta name="generator" content="STX 0.1.0 alpha"><title>STX Documentation</title><link rel="stylesheet" type="text/css" href="assets/layout.css"><link rel="stylesheet" type="text/css" href="assets/style.css"></head><body data-type="book"><h1>STX Documentation</h1><p><nav data-type="toc"><h1>Table of Contents</h1><ol><li><a href="#stx" data-type="xref" data-number="1.">STX</a><ol><li><a href="#command-line-interface" data-type="xref" data-number="1.1.">Command Line Interface</a></li><li><a href="#example" data-type="xref" data-number="1.2.">Example</a></li></ol></li><li><a href="#features" data-type="xref" data-number="2.">Features</a><ol><li><a href="#structured-documents" data-type="xref" data-number="2.1.">Structured Documents</a></li><li><a href="#cross-references" data-type="xref" data-number="2.2.">Cross References</a></li><li><a href="#numbering" data-type="xref" data-number="2.3.">Numbering</a></li><li><a href="#output-format" data-type="xref" data-number="2.4.">Output Formats</a><ol><li><a href="#html" data-type="xref" data-number="2.4.1.">HTML</a></li><li><a href="#json" data-type="xref" data-number="2.4.2.">JSON</a></li></ol></li></ol></li><li><a href="#syntax" data-type="xref" data-number="3.">Syntax</a><ol><li><a href="#block-components" data-type="xref" data-number="3.1.">Block Components</a><ol><li><a href="#sections" data-type="xref" data-number="3.1.1.">Sections</a></li><li><a href="#lists" data-type="xref" data-number="3.1.2.">Lists</a></li><li><a href="#tables" data-type="xref" data-number="3.1.3.">Tables</a></li><li><a href="#captions" data-type="xref" data-number="3.1.4.">Captions</a></li><li><a href="#literal-block" data-type="xref" data-number="3.1.5.">Literal Block</a></li><li><a href="#capturing-block" data-type="xref" data-number="3.1.6.">Capturing Block</a></li><li><a href="#content-breaks" data-type="xref" data-number="3.1.7.">Content Breaks</a></li><li><a href="#paragraphs" data-type="xref" data-number="3.1.8.">Paragraphs</a></li></ol></li><li><a href="#inline-components" data-type="xref" data-number="3.2.">Inline Components</a><ol><li><a href="#rich-text" data-type="xref" data-number="3.2.1.">Rich Text</a></li><li><a href="#links" data-type="xref" data-number="3.2.2.">Links</a></li><li><a href="#symbols" data-type="xref" data-number="3.2.3.">Symbols</a></li><li><a href="#inline-capturing" data-type="xref" data-number="3.2.4.">Inline Capturing</a></li><li><a href="#function-call" data-type="xref" data-number="3.2.5.">Function Call</a></li></ol></li><li><a href="#attributes" data-type="xref" data-number="3.3.">Attributes</a></li><li><a href="#directives" data-type="xref" data-number="3.4.">Directives</a><ol><li><a href="#include-directive" data-type="xref" data-number="3.4.1.">Include Directive</a></li><li><a href="#output-directive" data-type="xref" data-number="3.4.2.">Output Directive</a></li><li><a href="#stylesheet-directive" data-type="xref" data-number="3.4.3.">Stylesheet Directive</a></li><li><a href="#meta-data-directives" data-type="xref" data-number="3.4.4.">Meta-data Directives</a></li></ol></li></ol></li><li><a href="#functions" data-type="xref" data-number="4.">Functions</a><ol><li><a href="#code" data-type="xref" data-number="4.1.">Code</a></li><li><a href="#images" data-type="xref" data-number="4.2.">Images</a></li><li><a href="#embed-content" data-type="xref" data-number="4.3.">Embed Content</a></li><li><a href="#table-of-contents" data-type="xref" data-number="4.4.">Table of Contents</a></li><li><a href="#admonitions" data-type="xref" data-number="4.5.">Admonitions</a></li></ol></li><li><a href="#data-syntax" data-type="xref" data-number="5.">Data Syntax</a><ol><li><a href="#token" data-type="xref" data-number="5.1.">Token</a></li><li><a href="#entry" data-type="xref" data-number="5.2.">Entry</a></li><li><a href="#group" data-type="xref" data-number="5.3.">Group</a></li></ol></li></ol></nav>
 </p><section id="stx"><h1 data-number="1.">STX
 </h1><p>STX is a markup language for creating documents.
 It is designed to be simple enough to be easily read and written but at the 
 same time powerful enough to allow creating complex documents.
-</p><p>A document in STX is generated by a single self-describing text file;
-the <a href="#output-format" data-type="xref">output format</a> and <a href="#document-meta-data" data-type="xref" data-status="invalid">document meta-data</a> is embedded in the file.
-External content can be included from other resources using <a href="#directives" data-type="xref">directives</a>.
-</p><p>Despite part of the syntax is based on Markdown and AsciiDoc, STX is not an 
-extension. In order to achieve advanced features, most of the <a href="#syntax" data-type="xref">syntax</a> is 
-different and <strong>stricter</strong>.
-</p></section><section id="features"><h1 data-number="2.">Features
+</p><p>A document in STX is generated by a single self-describing text file that
+must comply with the <a href="#syntax" data-type="xref">syntax</a> so it can be compiled.
+External content can be included from other resources by using <a href="#directives" data-type="xref">directives</a>.
+</p><p>Some of the patterns in the <a href="#syntax" data-type="xref">syntax</a> were inspired by other markup languages
+like Markdown and AsciiDoc so the entry barrier was low.
+</p><section id="command-line-interface"><h2 data-number="1.1.">Command Line Interface
+</h2><p>The current STX implementation was written in 
+<a href="https://www.python.org/downloads/">Python</a>
+and can be installed
+with <a href="https://pip.pypa.io/en/stable/installing/">pip</a>.
+</p><figure id="installing-and-processing-a-document-"><pre data-type="programlisting" data-code-language="shell"># Install the latest stx version
+pip install stx
+
+# Process a document
+stx index.stx
+
+# Watch a document for changes
+stx index.stx --watch
+</pre><figcaption data-number="1.">Installing and processing a document.
+</figcaption></figure><p>The source code can be found in the
+<a href="https://github.com/stx-lang/python-stx">python-stx</a>
+repository in GitHub.
+</p></section><section id="example"><h2 data-number="1.2.">Example
+</h2><p>This document is a living example of the capabilities of STX,
+the source code can be found in the file
+<a href="https://github.com/stx-lang/docs/blob/master/index.stx">index.stx</a>
+in the 
+<a href="https://github.com/stx-lang/docs">docs</a> 
+repository in GitHub.
+</p></section></section><section id="features"><h1 data-number="2.">Features
 </h1><p>Most of the features are oriented to help to create technical and academic
 documents.
 </p><section id="structured-documents"><h2 data-number="2.1.">Structured Documents
-</h2><p>The text written in STX generates documents represented by a hierarchycal 
-component structure described in the <a href="#document-model" data-type="xref" data-status="invalid">Document Model</a> section.
-</p><p>Building a document using components makes it possible to have &ldquo;inifite&rdquo;
-nesting and the option to render it to multiple <a href="#output-formats" data-type="xref" data-status="invalid">output formats</a>.
-</p><p><a id="nesting-rules"></a>Nesting rules are based on the text alignment. Whenever there is <a href="#block-mark" data-type="xref" data-status="invalid">block mark</a>, 
-the content can be nested following the aligment of the subsequent text. 
+</h2><p>The text written in STX generates documents represented by a hierarchical 
+component structure.
+Building a document using components makes it possible to have &ldquo;infinite&rdquo;
+nesting and the option to render it to multiple output formats.
+</p><p><a id="nesting-rules"></a>Nesting rules are based on the text alignment. Whenever there is block mark, 
+the content can be nested following the alignment of the subsequent text. 
 The content can be broken just by breaking the alignment or by using a <code>%</code> 
 (percentage symbol).
 </p><figure id="example-of-nested-components-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">|= Column 1 | Column 2
@@ -27,20 +50,20 @@ The content can be broken just by breaking the alignment or by using a <code>%</
                 +++ code
                 This is nested in item2.
                 +++
-</span></pre><figcaption data-number="1.">Example of nested components.
+</span></pre><figcaption data-number="2.">Example of nested components.
 </figcaption></figure></section><section id="cross-references"><h2 data-number="2.2.">Cross References
 </h2><p>Since the STX documents are structured, cross references are easy to 
 generate and validate. Text between brackets are considered links, the 
-target reference can be customatized by appending it between parenthesis 
+target reference can be customized by appending it between parenthesis 
 Broken references are validated generating a warning.
 </p><figure id="different-ways-to-create-links-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">[Simple link]
 [Link with explicit reference](this the reference)
 [External link](http://www.example.com)
-</span></pre><figcaption data-number="2.">Different ways to create links.
+</span></pre><figcaption data-number="3.">Different ways to create links.
 </figcaption></figure><p>The matching algorithm for validating references ignores the case and only 
 considers words using ASCII letters and numbers. 
 A reference like <code>[this]</code> is equivalent than <code>[THIS]</code>.
-</p><p>Only <a href="#sections" data-type="xref">sections</a> are automatically referenceable by using the heading text,
+</p><p>Only <a href="#sections" data-type="xref">sections</a> can be automatically referenced by using the heading text,
 if a section attempts to create duplicated references, the algorithm
 starts appending a number.
 </p><p>Custom references are supported by adding the <code>ref</code> attribute to any 
@@ -50,7 +73,7 @@ component.
 - Other option 2.
 
 Please see [other options], it also works with [more options].
-</span></pre><figcaption data-number="3.">Custom references.
+</span></pre><figcaption data-number="4.">Custom references.
 </figcaption></figure></section><section id="numbering"><h2 data-number="2.3.">Numbering
 </h2><p>Since the documents in STX are organized by sections, they can be easily 
 numbered. Each section, figure and table are automatically numbered.
@@ -69,24 +92,24 @@ formats.
 is completely based on the <a href="https://oreillymedia.github.io/HTMLBook/">HTMLBook</a> 
 specification, a great unofficial draft from O’Reilly Media, Inc.
 </p><figure id="specifying-the-html-output-format-in-a-document"><pre data-type="programlisting" data-code-language="stx"><span class="stx">#output(format: html, target: index.html)
-</span></pre><figcaption data-number="4.">Specifying the HTML output format in a document.
+</span></pre><figcaption data-number="5.">Specifying the HTML output format in a document.
 </figcaption></figure><p>Since this is the main format for rendering STX documents, some directives
 are optimized for HTML, example:
 </p><figure id="linking-css-stylesheets-in-a-document-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">#stylesheets(
     assets/layout.css,
     assets/style.css
 )
-</span></pre><figcaption data-number="5.">Linking CSS stylesheets in a document.
+</span></pre><figcaption data-number="6.">Linking CSS stylesheets in a document.
 </figcaption></figure><p>Another useful feature for creating HTML documents is the <code>embed</code> function,
 which integrates the content from another file directly in the document.
 </p><figure id="embedding-an-html-fragment-into-the-document"><pre data-type="programlisting" data-code-language="stx"><span class="stx">&lt;embed(assets/layout.html)&gt;
-</span></pre><figcaption data-number="6.">Embedding an HTML fragment into the document.
+</span></pre><figcaption data-number="7.">Embedding an HTML fragment into the document.
 </figcaption></figure></section><section id="json"><h3 data-number="2.4.2.">JSON
 </h3><p>This output format generates a JSON file with the raw structure of the 
 document. This format is not optimized for human reading but can be useful
 for debugging and using it with other tools.
 </p><figure id="specifying-the-json-output-format-in-a-document"><pre data-type="programlisting" data-code-language="stx"><span class="stx">#output(format: json, target: index.json)
-</span></pre><figcaption data-number="7.">Specifying the JSON output format in a document.
+</span></pre><figcaption data-number="8.">Specifying the JSON output format in a document.
 </figcaption></figure></section></section></section><section id="syntax"><h1 data-number="3.">Syntax
 </h1><p>The STX syntax is stricter than other markup languages. 
 Having a malformed component will cause a compilation error.
@@ -106,7 +129,7 @@ considered as a single composite component.
 The content of the section must be aligned with the section mark.
 </p><figure id="section-syntax-"><pre data-type="programlisting"><p>=== <a href="#block-components" data-type="xref">Heading Content</a>
 </p><p><a href="#block-components" data-type="xref">Section Content</a>
-</p></pre><figcaption data-number="8.">Section syntax.
+</p></pre><figcaption data-number="9.">Section syntax.
 </figcaption></figure><p>Compared with other markup languages, sections here are not just titles, 
 they contain all subsequent components <strong>until a section with a level equal 
 or less is found</strong>.
@@ -121,7 +144,7 @@ or less is found</strong>.
 = Section I (2.)
 == Section J (2.1, inside I)
 == Section K (2.2, inside I)
-</span></pre><figcaption data-number="9.">Example of nested sections.
+</span></pre><figcaption data-number="10.">Example of nested sections.
 </figcaption></figure></section><section id="lists"><h3 data-number="3.1.2.">Lists
 </h3><p>There are two kind of lists: unordered and ordered, they can be created by
 using the <code>-</code> (dash symbol) and <code>.</code> (period symbol) respectively.
@@ -147,7 +170,7 @@ words, multiple cells can be defined in a single line.
 |- <a href="#block-components" data-type="xref">Cell 1,N Content</a>  
    | Cell 2,N Content
    | Cell N,N Content
-</pre><figcaption data-number="10.">Table syntax.
+</pre><figcaption data-number="11.">Table syntax.
 </figcaption></figure><div data-type="information"><p>The number of cells per row is not required to match.
 </p></div></section><section id="captions"><h3 data-number="3.1.4.">Captions
 </h3><p>Captions are not components <em>per se</em>, they are used to create or change 
@@ -157,9 +180,9 @@ other components:
 gets wrapped by the figure.
 </li></ul><p>There are two ways to apply a caption to a component:
 </p><ul><li><strong>Before the component</strong>: They are created by using <code>::</code> (two colon symbols)
-and must be placed before the target component at the same aligment.
+and must be placed before the target component at the same alignment.
 </li><li><strong>After the component</strong>: They are created by using <code>:^</code> (colon and caret 
-symbols) and must be placed after the target component at the same aligment.
+symbols) and must be placed after the target component at the same alignment.
 </li></ul><div data-type="layout" data-dir="row"><div data-type="layout-item"><figure><pre data-type="programlisting"><p>:: <a href="#block-components" data-type="xref">Caption Content</a>
 </p><p><a href="#block-components" data-type="xref">Target Component</a>
 </p></pre><figcaption>Pre-caption syntax.
@@ -173,28 +196,28 @@ and one line after.
 </p><figure id="simple-literal-component-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">+++
 This text is not parsed by *STX*, so it _should_ be rendered as it is.
 +++
-</span></pre><figcaption data-number="11.">Simple literal component.
+</span></pre><figcaption data-number="12.">Simple literal component.
 </figcaption></figure><p>Optionally, the raw text can be processed by a function to decorate it or
 create a richer component.
-The function must be inditacted by an <a href="#entry" data-type="xref">entry</a> right after the first <code>+++</code> 
+The function must be indicated by an <a href="#entry" data-type="xref">entry</a> right after the first <code>+++</code> 
 mark (there can by any amount of spaces in between).
 </p><figure id="code-block-component-produced-by-a-processed"><pre data-type="programlisting" data-code-language="stx"><span class="stx">+++ code:js
 console.log(&apos;Hello world!&apos;);
 +++
-</span></pre><figcaption data-number="12.">Code block component produced by a processed literal.
+</span></pre><figcaption data-number="13.">Code block component produced by a processed literal.
 </figcaption></figure><div data-type="information"><p>See the <a href="#functions" data-type="xref">functions</a> sections for more details.
-</p></div></section><section id="capturing-blocks"><h3 data-number="3.1.6.">Capturing Block
+</p></div></section><section id="capturing-block"><h3 data-number="3.1.6.">Capturing Block
 </h3><p>This component creates a group of components which can be processed by a
-function to decorate them or create a richer component. The commponents
+function to decorate them or create a richer component. The components
 must be delimited by <code>{{{</code> (three left curly braces) and <code>}}}</code> (three
 right curly braces)
 ; one line before 
-and one line after, the function must be inditacted by an <a href="#entry" data-type="xref">entry</a> right 
+and one line after, the function must be indicated by an <a href="#entry" data-type="xref">entry</a> right 
 after the first <code>{{{</code> mark (there can by any amount of spaces in between).
 </p><figure id="admonition-box-produced-by-a-captured-paragraph"><pre data-type="programlisting" data-code-language="stx"><span class="stx">{{{ information
 This text will be shown as an information admonition.
 }}}
-</span></pre><figcaption data-number="13.">Admonition box produced by a captured paragraph.
+</span></pre><figcaption data-number="14.">Admonition box produced by a captured paragraph.
 </figcaption></figure><div data-type="information"><p>See the <a href="#functions" data-type="xref">functions</a> sections for more details.
 </p></div></section><section id="content-breaks"><h3 data-number="3.1.7.">Content Breaks
 </h3><p>Any block component can be broken by using <code>%</code> (percentage symbol).
@@ -207,7 +230,7 @@ Content of section B. Next block mark will break this section.
 % 
 
 This content now is inside the Section A.
-</span></pre><figcaption data-number="14.">Section content broken.
+</span></pre><figcaption data-number="15.">Section content broken.
 </figcaption></figure></section><section id="paragraphs"><h3 data-number="3.1.8.">Paragraphs
 </h3><p>Any other sequence of characters that doesn&apos;t match with a <a href="#block-mark" data-type="xref" data-status="invalid">block mark</a> is
 considered a paragraph. The paragraphs are composed by a sequence of 
@@ -216,7 +239,7 @@ considered a paragraph. The paragraphs are composed by a sequence of
 
 This is the paragraph #2.
 This line is part of the paragraph #2.
-</span></pre><figcaption data-number="15.">Two paragraphs.
+</span></pre><figcaption data-number="16.">Two paragraphs.
 </figcaption></figure></section></section><section id="inline-components"><h2 data-number="3.2.">Inline Components
 </h2><section id="rich-text"><h3 data-number="3.2.1.">Rich Text
 </h3><p>There are some delimiter marks that can decorate the surrounded inline 
@@ -234,7 +257,7 @@ These marks can be nested as any other component in STX.
 </td><td>Code sample text: normally rendered with a monospace typography.
 </td><td><code>HTML uses the `&lt;code&gt;` tag.</code>
 </td></tr><tr><td><code>~~</code> (two tilde symbols)
-</td><td>Strikethrough text: normally rendered with a horizontal line through 
+</td><td>Strike-through text: normally rendered with a horizontal line through 
 its center.
 </td><td><code>Use ~~one~~ two tilde symbols.</code>
 </td></tr><tr><td><code>&quot;&quot;</code> (two double quotes symbol) 
@@ -253,18 +276,18 @@ bracket symbol), optionally, the target reference surrounded
 by parenthesis should be appended immediately after the right bracket.
 </p><figure id="different-ways-to-create-links-1"><pre data-type="programlisting" data-code-language="stx"><span class="stx">[Inline link with implicit reference.]
 [Inline link.](with explicit reference)
-</span></pre><figcaption data-number="16.">Different ways to create links.
+</span></pre><figcaption data-number="17.">Different ways to create links.
 </figcaption></figure></section><section id="symbols"><h3 data-number="3.2.3.">Symbols
-</h3><p>There are some combinations of characteres that generate specific symbols:
+</h3><p>There are some combinations of characters that generate specific symbols:
 </p><table id="character-sequence-symbol-three-period-symbols"><tr><th>Character Sequence            </th><th>Symbol
 </th></tr><tr><td><code>...</code> (three period symbols) </td><td><code>…</code> (ellipsis)
 </td></tr></table></section><section id="inline-capturing"><h3 data-number="3.2.4.">Inline Capturing
-</h3><p>Similar to the <a href="#capturing-blocks" data-type="xref">capturing blocks</a>, inline content can be captured as well
+</h3><p>Similar to the capturing blocks, inline content can be captured as well
 by surrounding it with <code>{</code> and <code>}</code> (left and right brace symbols).
 Captured text doesn&apos;t change too much by itself, it only gets grouped
 and the rendered result is normally the same.
 </p><figure id="the-captured-text-is-the-american-rock-band"><pre data-type="programlisting" data-code-language="stx"><span class="stx">&quot;&quot;Light My Fire&quot;&quot; is a song by {the American rock band *the Doors*}.
-</span></pre><figcaption data-number="17.">The captured text is <code>the American rock band *the Doors*</code>.
+</span></pre><figcaption data-number="18.">The captured text is <code>the American rock band *the Doors*</code>.
 </figcaption></figure><p>In order to generate richer content, the captured content can be processed 
 by appending a <a href="#function-call" data-type="xref">function call</a> immediately after the <code>}</code> (right brace 
 symbol).
@@ -278,18 +301,18 @@ immediately before of a function call.
 </p><figure id="different-ways-to-create-function-calls-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">Click on the folder icon (&lt;img: folder.png&gt;).
 
 Links are highlighted with {red}&lt;color:#FF0000&gt;.
-</span></pre><figcaption data-number="18.">Different ways to create function calls.
+</span></pre><figcaption data-number="19.">Different ways to create function calls.
 </figcaption></figure></section></section><section id="attributes"><h2 data-number="3.3.">Attributes
 </h2><p>All components can receive arguments, they are used mainly for changing how
 it is rendered or just to provide meta information. 
-</p><p>The arguments must be specificed before the component and are created with
+</p><p>The arguments must be specified before the component and are created with
 a <code>@</code> (at symbol) followed by an <a href="#entry" data-type="xref">entry</a>. The entry represents the name and
 value of the attribute.
 </p><figure id="section-marked-as-an-appendix-by-using-attributes"><pre data-type="programlisting" data-code-language="stx"><span class="stx">@type:appendix
 = Appendix Title
 
 Appendix content
-</span></pre><figcaption data-number="19.">Section marked as an appendix by using attributes.
+</span></pre><figcaption data-number="20.">Section marked as an appendix by using attributes.
 </figcaption></figure><p>The attributes which can accept all components are described in the table
 below.
 </p><table id="global-attributes-for-components-"><caption data-number="3.">Global attributes for components.
@@ -312,7 +335,7 @@ contain a folder, the entire content of the folder is included recursively.
 </p><figure id="include-examples-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">#include(appendix.stx)
 
 #include(appendix.stx, glossary.stx)
-</span></pre><figcaption data-number="20.">Include examples.
+</span></pre><figcaption data-number="21.">Include examples.
 </figcaption></figure></section><section id="output-directive"><h3 data-number="3.4.2.">Output Directive
 </h3><p>Indicates the output format after processing the document. Accepts 
 following arguments:
@@ -320,7 +343,7 @@ following arguments:
 </li><li><code>target</code>: The file where the document should be generated.
 </li><li><code>options</code>: Format-specific options.
 </li></ul><figure id="output-directive-example-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">#output(format: html, target: ./index.html)
-</span></pre><figcaption data-number="21.">Output directive example.
+</span></pre><figcaption data-number="22.">Output directive example.
 </figcaption></figure></section><section id="stylesheet-directive"><h3 data-number="3.4.3.">Stylesheet Directive
 </h3><p>This directive exists because HTML and other formats supports the use of 
 stylesheets. It accepts a <a href="#token" data-type="xref">Token</a> or a <a href="#group" data-type="xref">Group</a> of tokens representing the
@@ -329,7 +352,7 @@ stylesheet files.
     assets/layout.css,
     assets/style.css
 )
-</span></pre><figcaption data-number="22.">Stylesheets directive example.
+</span></pre><figcaption data-number="23.">Stylesheets directive example.
 </figcaption></figure></section><section id="meta-data-directives"><h3 data-number="3.4.4.">Meta-data Directives
 </h3><p>There are some directives for defining document attributes, these values
 are not necessarily rendered in the document.
@@ -339,7 +362,7 @@ are not necessarily rendered in the document.
 </li></ul><figure id="meta-data-directives-example-"><pre data-type="programlisting" data-code-language="stx"><span class="stx">#title(`STX Documentation`)
 #author(`Sergio Pedraza`)
 #encoding(`UTF-8`)
-</span></pre><figcaption data-number="23.">Meta-data directives example.
+</span></pre><figcaption data-number="24.">Meta-data directives example.
 </figcaption></figure></section></section></section><section id="functions"><h1 data-number="4.">Functions
 </h1><p>In STX, functions can receive plain values and components as arguments to
 generate new components. There are some built-in functions described in this
@@ -347,10 +370,10 @@ section, however, more functions can be registered at runtime since the
 design is modular.
 </p><p>Functions can be invoked by using following components:
 </p><ul><li><a href="#literal-block" data-type="xref">Literal Block</a>: The literal text is sent as argument.
-</li><li><a href="#capturing-block" data-type="xref" data-status="invalid">Capturing Block</a>: The captured component is sent as argument.
+</li><li><a href="#capturing-block" data-type="xref">Capturing Block</a>: The captured component is sent as argument.
 </li><li><a href="#function-call" data-type="xref">Function Call</a>: Only accepts plain arguments.
 </li></ul><p>All allowed components can use plain values as arguments by sending them in 
-the <a href="#entity" data-type="xref" data-status="invalid">entity</a>.
+the <a href="#entry" data-type="xref">entry</a>.
 </p><section id="code"><h2 data-number="4.1.">Code
 </h2><p>This function can be invoked by using the <code>code</code> keyword accepting following
 plain arguments:
@@ -400,7 +423,7 @@ characters can be scaped by using a <code>\</code>.
 abc
 ` `
 assets/example.txt
-</pre><figcaption data-number="24.">Example of valid tokens (one per line).
+</pre><figcaption data-number="25.">Example of valid tokens (one per line).
 </figcaption></figure></section><section id="entry"><h2 data-number="5.2.">Entry
 </h2><p>An entry represents a named value, the name is defined by using a <a href="#token" data-type="xref">token</a> 
 followed by a <code>:</code> (colon symbol) as a separator, the value can be either a 
@@ -409,7 +432,7 @@ followed by a <code>:</code> (colon symbol) as a separator, the value can be eit
 song(artist: `Miles Davis`, name: `So What`)
 fibonacci(0, 1, 1, 2, 3, 5, 8, 13, 21, ...)
 file: folder/index.html
-</pre><figcaption data-number="25.">Example of valid entries (one per line).
+</pre><figcaption data-number="26.">Example of valid entries (one per line).
 </figcaption></figure></section><section id="group"><h2 data-number="5.3.">Group
 </h2><p>Sequence of values (<a href="#token" data-type="xref">token</a>, <a href="#entry" data-type="xref">entry</a> or <a href="#group" data-type="xref">group</a>) delimited by parenthesis <code>()</code>
 and separated by a comma (<code>,</code>).
@@ -417,7 +440,7 @@ and separated by a comma (<code>,</code>).
 song(artist: `Miles Davis`, name: `So What`)
 fibonacci(0, 1, 1, 2, 3, 5, 8, 13, 21, ...)
 file: folder/index.html
-</pre><figcaption data-number="26.">Example of valid groups (one per line).
+</pre><figcaption data-number="27.">Example of valid groups (one per line).
 </figcaption></figure><p><script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 <script type="text/javascript">
     // create layout
