@@ -539,24 +539,131 @@ are not necessarily rendered in the document.
 :^ Meta-data directives example.
 
 = Functions
+
+In STX, functions can receive plain values and components as arguments to
+generate new components. There are some built-in functions described in this
+section, however, more functions can be registered at runtime since the
+design is modular.
+
+Functions can be invoked by using following components:
+
+- [Literal Block]: The literal text is sent as argument.
+- [Capturing Block]: The captured component is sent as argument.
+- [Function Call]: Only accepts plain arguments.
+
+All allowed components can use plain values as arguments by sending them in 
+the [entity].
+
 == Code
+
+This function can be invoked by using the `code` keyword accepting following
+plain arguments:
+
+- `lang`: Name of the language of the content.
+
+Literal text should be sent as argument, if a rich component is sent, it will
+be converted to plain text throwing a warning.
+
+If the language is supported by some registered grammar, the result will be
+tokenized, otherwise the result will be just marked as a code block.
+
 == Images
+
+This function can be invoked by using the `img` and `image` keywords, 
+accepting following plain arguments:
+
+- `src`: Location of the image.
+- `alt`: Alternative text describing the image.
+
+The resulting component will be an image inserted in the document.
+
 == Embed Content
+
+This function can be invoked by using the `embed` keyword,
+accepting following plain arguments:
+
+- `src`: Location of the file to embed.
+
+The resulting component will be a literal text with the content of the file. 
+
+{{{ information
+For embed the components of a STX file, 
+the directive `include` should be used.
+}}}
+
 == Table of Contents
+
+This function can be invoked by using the `toc` keyword,
+accepting following plain arguments:
+
+- `title`: The title of the table of contents.
+
+The resulting component will be a table of contents of all sections defined
+in the document.
+
 == Admonitions
-== Other
+
+This function can be invoked by using the `information` and `warning` keywords.
+
+The resulting component will be a block marked as an admonition of the type 
+of the keyword.
 
 
 = Data Syntax
 
+Apart from the rich content of the components, in STX there is a syntax for 
+entering structured data which is used to invoke and pass arguments to 
+functions, define directives and attributes, among other uses.
+
+This way of entering data is designed to be easy to write and read for a
+human, it consists in three types of data described below.
+
 == Token
 
+Represents a final value, depending on the context it can be interpreted as 
+text, number, boolean, etc.
+
+There are two ways of writing a token:
+
+. *Direct*: Any sequence of letters, digits, underscores (`\_`), dashes (`-`),
+  periods (`.`) or slashes (`/`).
+. *Delimited*: Any sequence of characters between grave accents (`\``), special
+  characters can be scaped by using a `\\`.
+
++++ code
+012
+abc
+` `
+assets/example.txt
++++
+:^ Example of valid tokens (one per line).
 
 == Entry
 
+An entry represents a named value, the name is defined by using a [token] 
+followed by a `:` (colon symbol) as a separator, the value can be either a 
+[token] or a [group]. When the value is a group, the separator can be omitted.
+
++++ code
+genre: jazz
+song(artist: `Miles Davis`, name: `So What`)
+fibonacci(0, 1, 1, 2, 3, 5, 8, 13, 21, ...)
+file: folder/index.html
++++
+:^ Example of valid entries (one per line).
 
 == Group
 
+Sequence of values ([token], [entry] or [group]) delimited by parenthesis `()`
+and separated by a comma (`,`).
+
++++ code
+genre: jazz
+song(artist: `Miles Davis`, name: `So What`)
+fibonacci(0, 1, 1, 2, 3, 5, 8, 13, 21, ...)
+file: folder/index.html
++++
+:^ Example of valid groups (one per line).
 
 
 #stylesheets(
