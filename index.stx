@@ -374,7 +374,7 @@ This content now is inside the Section A.
 
 === Paragraphs
 
-Any other sequence of characters that doesn't match with a [block mark] is
+Any other sequence of characters that doesn't match with a block mark is
 considered a paragraph. The paragraphs are composed by a sequence of 
 [inline components] and are broken by an empty line.
 
@@ -694,12 +694,4 @@ file: folder/index.html
 +++
 :^ Example of valid groups (one per line).
 
-
-#stylesheets(
-    assets/layout.css,
-    assets/style.css
-)
-
-<embed(assets/layout.html)>
-
-#output(format: html, target: ./index.html)
+#output(format: html, target: ./index.html, theme: classic)
